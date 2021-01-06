@@ -105,7 +105,7 @@ const getExchangeRatePerDay = async (year, month, day) => {
 const getCurrentExchangeRate = async () => {
     try {
         const db = admin.firestore()
-        const rateDoc = await db.collection(collectionName).orderBy("month", "desc").orderBy('year', 'desc').orderBy('day', 'desc').limit(1).get();
+        const rateDoc = await db.collection(collectionName).orderBy('year', 'desc').orderBy("month", "desc").orderBy('day', 'desc').limit(1).get();
         if (rateDoc.empty) return {};
         const record = rateDoc.docs[0].data();
         const { sellingRate, buyingRate, date } = record;

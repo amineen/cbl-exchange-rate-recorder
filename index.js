@@ -126,7 +126,7 @@ const uploadExchangeRates = (rates)=>{
 
 exports.cbl_rate_job = functions
   .runWith({ memory: "1GB", timeoutSeconds:300 })
-  .pubsub.schedule("every 3 hours")
+  .pubsub.schedule("every 2 hours")
   .onRun(async (context) => {
     try {
       const rates = await scrapeCbl();
