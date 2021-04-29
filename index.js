@@ -136,4 +136,4 @@ exports.cbl_rate_job = functions
       return error;
     }
   });
-exports.cbl_api = functions.runWith({ memory: "1GB", timeoutSeconds: 300 }).https.onRequest(app);
+exports.cbl_api = functions.runWith({ memory: "1GB", timeoutSeconds: 60 }).https.onRequest(app);
